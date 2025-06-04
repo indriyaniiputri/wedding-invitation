@@ -59,7 +59,7 @@
       </main>
     </section>
 
-    <nav class="floating-icon-navbar">
+    <nav class="floating-icon-navbar d-flex sticky-top float-end">
       <a href="#home" class="icon-btn" title="Home"
         ><i class="bi bi-house-heart"></i
       ></a>
@@ -535,7 +535,7 @@
       });
     </script>
 
-    <script>
+    <!-- <script>
       const stickyTop = document.querySelector(".sticky-top");
       const offCanvas = document.querySelector(".offcanvas");
 
@@ -546,7 +546,7 @@
       offCanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
-    </script>
+    </script> -->
 
     <script>
       const rootElement = document.querySelector(":root");
@@ -567,9 +567,16 @@
       }
 
       function enableScroll() {
+        // document.body.style.overflow = "auto";
         window.onscroll = function () {};
         rootElement.style.scrollBehavior = "smooth";
         // localStorage.setItem("opened", "true");
+
+        const navbar = document.querySelector(".floating-icon-navbar");
+        if (navbar) {
+          navbar.style.display = "flex";
+        }
+
         playAudio();
       }
 
@@ -618,7 +625,7 @@
       });
     </script>
 
-    <script>
+    <!-- <script>
       const urlParams = new URLSearchParams(window.location.search);
       const nama = urlParams.get("n") || "";
       const pronoun = urlParams.get("p") || "Bapak/Ibu/Saudara/i";
@@ -626,6 +633,6 @@
       namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ",");
 
       document.querySelector("#nama").value = nama;
-    </script>
+    </script> -->
   </body>
 </html>
