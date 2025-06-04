@@ -2,7 +2,7 @@
   --pink: #f14e95;
   --blueOcean: #00bcd4;
   --bg: #0a0a0a;
-  --darkBlue:#00468b;
+  --darkBlue: #00468b;
   --shadow: 0 2px 2px rgba(0 0 0 / 0.5);
 }
 
@@ -20,9 +20,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(img/background/coupleRing.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/background/coupleRing.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -30,11 +29,10 @@ body {
 }
 
 .hero {
-   min-height: 600px; /* opsional: untuk jaga-jaga tampilan tetap oke */
+  min-height: 600px; /* opsional: untuk jaga-jaga tampilan tetap oke */
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-
 }
 
 .hero h1,
@@ -46,8 +44,7 @@ body {
 .hero h1 {
   font-family: "Georgia", cursive;
   font-size: 6rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero h4 {
@@ -84,7 +81,7 @@ body {
   height: 50px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: var(--darkBlue); /* warna icon bootstrap default */
   display: flex;
   align-items: center;
@@ -98,17 +95,15 @@ body {
   background-color: var(--darkBlue);
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,123,255,0.4);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
 }
 
 .home {
   background-image: url(img/bunga.png);
   background-size: cover;
   min-height: 100vh;
-  margin-top: -6rem;
-  padding-top: 15rem;
+  padding-top: 5rem;
   padding-bottom: 5rem;
-  
 }
 
 .home h2,
@@ -159,11 +154,11 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(65px);
 }
-.note{
+.note {
   margin-top: 16px;
-  font-size: 0.75rem;  /* Ukuran diperkecil */
-  color: #000000;      /* Warna lebih soft */
-  font-style: italic;  /* Opsional: bikin kesan lembut */
+  font-size: 0.75rem; /* Ukuran diperkecil */
+  color: #000000; /* Warna lebih soft */
+  font-style: italic; /* Opsional: bikin kesan lembut */
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -196,7 +191,7 @@ body {
 }
 
 .couple-role {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 1.5rem;
   margin-top: 1rem;
   color: #333;
@@ -214,7 +209,7 @@ body {
 }
 
 .couple h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 24px;
 }
 
@@ -222,7 +217,6 @@ body {
   font-size: 16px;
   color: #555;
 }
-
 
 .info {
   background-color: var(--bg);
@@ -480,7 +474,6 @@ footer li {
 @media (max-width: 992px) {
   html {
     font-size: 75%;
-    scroll-padding-top: 120px; 
   }
 
   .simply-countdown > .simply-section {
