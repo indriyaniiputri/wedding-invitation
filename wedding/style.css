@@ -42,6 +42,11 @@ body {
 .hero p {
   text-shadow: var(--shadow);
 }
+.hero h2 {
+  font-family: "Georgia", serif;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 
 .hero h1 {
   font-family: "Georgia", serif;
@@ -122,7 +127,7 @@ body {
   background-size: cover;
   min-height: 100vh;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 8rem;
   background-color: var(--darkBlue);
   opacity: 90%;
 }
@@ -130,10 +135,16 @@ body {
 .home h2,
 .info h2,
 .story h2,
-.gallery h2,
-.rsvp h2,
 .gifts h2 {
   color: var(--softCream);
+  font-family: "Georgia", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.gallery h2,
+.rsvp h2 {
+ color: var(--darkBlue);
   font-family: "Georgia", cursive;
   font-size: 4rem;
   font-weight: bold;
@@ -161,11 +172,37 @@ body {
   color: var(--darkBlue);
 }
 
-.home .couple img {
+/* .home .couple img {
   width: 70%;
-  border-radius: 50%;
-  box-shadow: 3px 3px 5px 0.5px #;
+  border-radius: 70%;
+  box-shadow: 3px 3px 5px 0.5px #000;
+} */
 
+.photo-wrapper {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.flower-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  z-index: 1;
+}
+
+.foto-pengantin {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px 0.5px #000;
+  z-index: 1;
 }
 
 .home .heart {
@@ -245,7 +282,7 @@ body {
   background-color: var(--darkBlue);
   color: var(--cream);
   padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 8rem;
 }
 
 .info .alamat {
@@ -289,17 +326,18 @@ body {
 
 .story,
 .gallery,
-.rsvp,
-.gifts {
+.rsvp {
   padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 8rem;
+  background-color: var(--softCream);
+  opacity: 90%;
 }
 
 .story span,
 .gallery span,
 .gifts span {
   text-transform: uppercase;
-  color: #666;
+  color: #102C57;
   font-size: 0.9rem;
   letter-spacing: 1px;
   display: block;
@@ -312,6 +350,27 @@ body {
 .gifts p {
   font-size: 1rem;
   font-weight: 300;
+}
+
+.closing {
+ width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/background/coupleRing.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 600px; /* opsional: untuk jaga-jaga tampilan tetap oke */
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.gifts button {
+  color: var(--darkBlue);
+  background-color: white;
+  size: 2em;
+  box-shadow: var(--shadow);
 }
 
 .timeline {
@@ -411,33 +470,36 @@ body {
   right: auto;
 }
 
-.gallery {
-  background-color: #f5f5f5;
-}
-
-.rsvp {
+/* .gallery {
   background-color: var(--darkBlue);
+  opacity: 90%;
+} */
+
+.gifts {
+  background-color: var(--darkBlue);
+  padding-top: 5rem;
+  padding-bottom: 8rem;
 }
 
-.rsvp h2 {
+.gifts h2 {
   font-size: 4.5rem;
 }
 
-.rsvp p {
+.gifts p {
   color: white;
 }
 
-.rsvp form label {
+.gifts form label {
   color: white;
 }
 
-.rsvp button {
+.gifts button {
   background-color: var(--darkBlue);
   color: white;
   border: 1px solid var(--darkBlue);
 }
 
-.rsvp button:hover {
+.gifts button:hover {
   background-color: white;
   color: var(--darkBlue);
   border: 1px solid white;

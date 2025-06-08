@@ -10,6 +10,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -46,14 +47,13 @@
 
     <section
       id="hero"
-      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
-    >
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
         <div class="overlay fade-in">
           <h3 class="subtitle">The Wedding of</h3>
           <h1 class="bride-groom">Iggy & Dryeve</h1>
           <p class="guest">
-            Kepada Yth. Bapak/Ibu/Saudara/i,<br /><h3>Tamu Istimewa</h3>
+            Kepada Yth. Bapak/Ibu/Saudara/i,<br /><h2>Tamu Istimewa</h2>
           </p>
           <div class="simply-countdown"></div>
           <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()">Buka Undangan</a>
@@ -65,62 +65,68 @@
     </section>
 
     <nav class="floating-icon-navbar d-flex sticky-top float-end">
-      <a href="#home" class="icon-btn" title="Home"
+      <a href="#home" class="icon-btn"
         ><i class="bi bi-house-heart"></i
       ></a>
-      <a href="#info" class="icon-btn" title="Info"
+      <a href="#info" class="icon-btn" title="Tanggal Acara"
         ><i class="bi bi-calendar-heart-fill"></i
       ></a>
-      <a href="#story" class="icon-btn" title="Story"
+      <a hidden href="#story" class="icon-btn" title="Story"
         ><i class="bi bi-chat-left-heart"></i
       ></a>
-      <a href="#gallery" class="icon-btn" title="Gallery"
+      <a href="#gallery" class="icon-btn" title="Galeri"
         ><i class="bi bi-images"></i
       ></a>
-      <a href="#rsvp" class="icon-btn" title="RSVP"
+      <a href="#rsvp" class="icon-btn" title="Ucaoan"
         ><i class="bi bi-journal-check"></i
-      ></a>
-      <a href="#gifts" class="icon-btn" title="Gifts"
-        ><i class="bi bi-gift"></i
       ></a>
     </nav>
 
     <section id="home" class="home">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-10 text-center">
-            <h2 class="elegant-heading">I & D</h2>
-            <p>
-              Tanpa mengurangi rasa hormat, kami bermaksud mengundang
-              Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami :
-            </p>
-          </div>
-        </div>
-
-        <div class="row couple align-items-center text-center text-md-start">
-          <!-- Iggy -->
-          <div class="col-lg-5 col-md-6 mb-4 text-center">
-            <img src="img/OIP.jpg" class="img mb-2" alt="Iggy" />
-            <h2>Iggy</h2>
-            <p>Aldi Khoirul</p>
-            <p>Putra Pertama <br> Bpk. ZZZZ & Ibu YYYY</p>
-          </div>
-
-          <!-- Heart Icon -->
-          <div class="col-lg-2 col-md-12 text-center mb-4">
-            <i class="bi bi-heart-fill"></i>
-          </div>
-
-          <!-- Dryeve -->
-          <div class="col-lg-5 col-md-6 mb-4 text-center">
-            <img src="img/OIP.jpg" class="img mb-2" alt="Dryeve" />
-            <h2>Dryeve</h2>
-            <p>Indriyani Putri</p>
-            <p>Putri Pertama <br> Bapak AAA & Ibu BBB</p>
-          </div>
-        </div>
+  <div class="container">
+    <!-- Judul -->
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-8 col-10 text-center">
+        <h2>Iggy & Dryeve's Wedding</h2>
+        <p>
+          Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+          Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami:
+        </p>
       </div>
-    </section>
+    </div>
+
+    <!-- Pasangan -->
+    <div class="row couple align-items-center justify-content-center text-center mt-5">
+      <!-- Iggy -->
+      <div class="col-lg-5 col-md-6 mb-2 text-center">
+        <div class="photo-wrapper mx-auto">
+          <img src="img/OIP.jpg" class="foto-pengantin" alt="Iggy" />
+          <img src="img/floral_circles.png" alt="Flower Frame" class="flower-frame" />
+        </div>
+        <h2 class="mt-1">Iggy</h2>
+        <p>Aldi Khoirul</p>
+        <p>Putra Pertama <br> Bpk. ZZZZ & Ibu YYYY</p>
+      </div>
+
+      <!-- Icon Hati -->
+      <div class="col-lg-2 col-md-12 mb-4">
+        <i class="bi bi-heart-fill fs-1 text-danger"></i>
+      </div>
+
+      <!-- Dryeve -->
+      <div class="col-lg-5 col-md-6 mb-2">
+        <div class="photo-wrapper mx-auto">
+          <img src="img/OIP.jpg" class="foto-pengantin" alt="Dryeve" />
+          <img src="img/floral_circles.png" alt="Flower Frame" class="flower-frame" />
+
+        </div>
+        <h2 class="mt-1">Dryeve</h2>
+        <p>Indriyani Putri</p>
+        <p>Putri Pertama <br> Bpk. ZZZZ & Ibu YYYY</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="info" class="info">
       <div class="container">
@@ -150,7 +156,7 @@
                     <span>26 Januari 2026</span>
                   </div>
                   <div class="col-md-12">
-                    <i class="bi bi-pin d-block">
+                    <i class="bi bi-pin-map">
                       <span class="alamat">
                         Jalan Bersama, No 08, Yogyakarta
                       </span></i
@@ -226,6 +232,12 @@
                <br>
                <span>QS. An-Nisa 1:176</span>
             </p>
+            <p hidden>
+              "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang 
+              telah dipersatukan Allah, tidak boleh diceraikan manusia."
+              <br>
+              <span>Mathius 19 : 6</span>
+            </p>
             
           </div>
         </div>
@@ -233,7 +245,7 @@
       </div>
     </section>
 
-    <section id="story" class="story">
+    <section id="story" class="story" hidden>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -415,59 +427,6 @@
       </div>
     </section>
 
-    <section id="rsvp" class="rsvp">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-10 text-center">
-            <h2>Konfirmasi Kehadiran</h2>
-            <p>Isi Form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
-          </div>
-        </div>
-
-        <form
-          class="row row-cols-md-auto g-3 align-items-center justify-content-center"
-          method="POST"
-          action="https://script.google.com/macros/s/AKfycbyDdhtGF2m16gd5_p5Ka-Oc-IV9n5EolDHMtJMCk7aOBn5KRC3BiktBHG2B6m8yX6FX/exec"
-          id="my-form"
-        >
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" />
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="jumlah" class="form-label">Jumlah</label>
-              <input
-                type="number"
-                class="form-control"
-                id="jumlah"
-                name="jumlah"
-                min="1"
-                max="5"
-                length="1"
-                value="1"
-              />
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="status" class="form-label">Konfirmasi</label>
-              <select name="status" id="status" class="form-select">
-                <option selected>Pilih Salah Satu</option>
-                <option value="Hadir">Hadir</option>
-                <option value="Tidak Hadir">Tidak Hadir</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-12" style="margin-top: 30px">
-            <button class="btn btn-lg mt-4">Kirim</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
     <section id="gifts" class="gifts">
       <div class="container">
         <div class="row justify-content-center">
@@ -475,8 +434,8 @@
             <span>Ungkapan tanda kasih</span>
             <h2>Kirim Hadiah</h2>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-              quam, accusamus dolore sint labore at.
+             Terima kasih atas doa dan restu yang telah anda berikan, 
+             jika anda ingin mengirimkan kado nikah, silahkan kirim dengan cara dibawah ini.
             </p>
           </div>
         </div>
@@ -484,26 +443,123 @@
           <div class="col-md-6">
             <ul class="list-group">
               <li class="list-group-item">
-                <div class="fw-bold">BRI</div>
-                123456789 - Aldi Khoirul Abdillah
-              </li>
-              <li class="list-group-item">
-                <div class="fw-bold">BCA</div>
-                987654321 - Aldi Khoirul Abdillah
-              </li>
-              <li class="list-group-item">
+                <img style="width: 50px; height: auto;" src="img/BCA.png" alt="BCA"> 
+
+                <!-- <div class="fw-bold me-2">Aldi Khoirul Abdillah</div> -->
+                <span>Aldi Khoirul</span> 
+                <span id="rekening">123456789 </span>  
+                 <button class="btn btn-sm"   
+                        onclick="salinRekening(this)"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        title="Salin">Salin
+                  </button>
+               </li>
+                     
+             <li class="list-group-item">
+                <img style="width: 50px; height: auto;" src="img/BCA.png" alt="BCA"> 
+
+                <!-- <div class="fw-bold me-2">Aldi Khoirul Abdillah</div> -->
+                <span>Aldi Khoirul</span> 
+                <span id="rekening">22222222 </span>  
+                 <button class="btn btn-sm"   
+                        onclick="salinRekening(this)"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        title="Salin">Salin
+                  </button>
+               </li>
+
+
+              <li class="list-group-item" hidden>
                 <div class="fw-bold">Saweria</div>
                 <img
                   src="img/saweria.png"
                   alt="Saweria QR"
                   class="img-thumbnail"
-                  width="150"
-                />
+                  width="150"/>
               </li>
             </ul>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-10 text-center">
+        <h2>Ucapan & Doa</h2>
+        <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran, ucapan dan doa</p>
+      </div>
+    </div>
+
+    <form
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycbyDdhtGF2m16gd5_p5Ka-Oc-IV9n5EolDHMtJMCk7aOBn5KRC3BiktBHG2B6m8yX6FX/exec"
+      id="my-form"
+      class="row justify-content-center"
+    >
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required />
+        </div>
+
+        <div class="mb-3" hidden>
+          <label for="jumlah" class="form-label">Jumlah Kehadiran</label>
+          <input
+            type="number"
+            class="form-control"
+            id="jumlah"
+            name="jumlah"
+            min="1"
+            max="5"
+            value="1"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="status" class="form-label">Konfirmasi</label>
+          <select name="status" id="status" class="form-select" required>
+            <option value="" disabled selected>Pilih Salah Satu</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+        </div>
+
+        <!-- Ucapan & Doa dipisahkan di bawah -->
+        <div class="mb-3">
+          <label for="ucapan" class="form-label">Ucapan & Doa</label>
+          <textarea
+            class="form-control"
+            id="ucapan"
+            name="ucapan"
+            rows="4"
+            placeholder="Tulis ucapan atau doa..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary btn-lg px-4">Kirim</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section
+      id="closing"
+      class="closing w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+      <main>
+        <div class="overlay fade-in">
+          <h3 class="subtitle">The Wedding of</h3>
+          <h1 class="bride-groom">Iggy & Dryeve</h1>
+        
+        </div>
+        </main>
     </section>
 
     <footer>
@@ -642,6 +698,31 @@
       });
     </script>
 
+    <script>
+  // Inisialisasi semua tooltip Bootstrap saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', function () {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+
+  function salinRekening(button) {
+    const text = document.getElementById('rekening').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const tooltip = bootstrap.Tooltip.getInstance(button);
+      button.setAttribute('data-bs-original-title', 'Disalin!');
+      tooltip.show();
+
+      // Reset kembali ke "Salin" setelah 1.5 detik
+      setTimeout(() => {
+        button.setAttribute('data-bs-original-title', 'Salin');
+      }, 1500);
+    });
+  }
+</script>
+
+
     <!-- <script>
       const urlParams = new URLSearchParams(window.location.search);
       const nama = urlParams.get("n") || "";
@@ -651,5 +732,6 @@
 
       document.querySelector("#nama").value = nama;
     </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
