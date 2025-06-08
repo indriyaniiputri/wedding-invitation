@@ -17,7 +17,10 @@
       rel="stylesheet"
     />
     <!--AOS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
 
     <!-- simplyCountdown -->
     <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
@@ -34,28 +37,30 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="path/to/lightbox.js"></script>
   </head>
+
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
     <section
       id="hero"
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
       <main>
-        <div class="overlay">
+        <div class="overlay fade-in">
           <h3 class="subtitle">The Wedding of</h3>
           <h1 class="bride-groom">Iggy & Dryeve</h1>
           <p class="guest">
-            Kepada Yth. Bapak/Ibu/Saudara/i, <br /><strong
-              >Tamu Istimewa</strong
-            >
+            Kepada Yth. Bapak/Ibu/Saudara/i,<br /><h3>Tamu Istimewa</h3>
           </p>
           <div class="simply-countdown"></div>
-          <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"
-            >Lihat Undangan</a
-          >
-          <p class="note" style="font-size: 0.75rem">
-            Mohon maaf apabila ada kesalahan penulisan nama/gelar
-          </p>
+          <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()">Buka Undangan</a>
         </div>
+        <p class="note" style="font-size: 0.75rem">
+          Mohon maaf apabila ada kesalahan penulisan nama/gelar
+        </p>
       </main>
     </section>
 
@@ -84,7 +89,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <h2>I & D</h2>
+            <h2 class="elegant-heading">I & D</h2>
             <p>
               Tanpa mengurangi rasa hormat, kami bermaksud mengundang
               Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami :
@@ -95,14 +100,10 @@
         <div class="row couple align-items-center text-center text-md-start">
           <!-- Iggy -->
           <div class="col-lg-5 col-md-6 mb-4 text-center">
-            <img
-              src="img/OIP.jpg"
-              class="img-fluid rounded-circle mb-2"
-              alt="Iggy"
-            />
-            <h3>Iggy</h3>
+            <img src="img/OIP.jpg" class="img mb-2" alt="Iggy" />
+            <h2>Iggy</h2>
             <p>Aldi Khoirul</p>
-            <p>Putra dari Bpk. ZZZZ<br />&<br />Ibu YYYY</p>
+            <p>Putra Pertama <br> Bpk. ZZZZ & Ibu YYYY</p>
           </div>
 
           <!-- Heart Icon -->
@@ -112,14 +113,10 @@
 
           <!-- Dryeve -->
           <div class="col-lg-5 col-md-6 mb-4 text-center">
-            <img
-              src="img/OIP.jpg"
-              class="img-fluid rounded-circle mb-2"
-              alt="Dryeve"
-            />
-            <h3>Dryeve</h3>
+            <img src="img/OIP.jpg" class="img mb-2" alt="Dryeve" />
+            <h2>Dryeve</h2>
             <p>Indriyani Putri</p>
-            <p>Putri dari Bapak AAA<br />&<br />Ibu BBB</p>
+            <p>Putri Pertama <br> Bapak AAA & Ibu BBB</p>
           </div>
         </div>
       </div>
@@ -130,15 +127,6 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2>Save the Date</h2>
-            <!-- <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.97055414075!2d110.37484495!3d-7.803250449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2sYogyakarta%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1693639258083!5m2!1sid!2sid"
-              width="100%"
-              height="250"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe> -->
             <p class="description">
               Diharapkan untuk tidak salah alamat dan tanggal. Jika tiba di
               tujuan namun tidak ada tanda-tanda sedang dilangsungkan
@@ -172,7 +160,7 @@
               </div>
               <div class="card-footer">
                 <a
-                  href="https://goo.gl/maps/ErnpyKxc9UJ1dRrL6"
+                  href="https://maps.app.goo.gl/S5sVB6S2SEkP8wNQ6"
                   target="_blank"
                   class="btn btn-light btn-sm my-3"
                   >Klik untuk membuka Peta</a
@@ -180,7 +168,22 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-10">
+
+            <div class="col-md-5 col-10" hidden>
+              <div style="overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.97055414075!2d110.37484495!3d-7.803250449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2sYogyakarta%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1693639258083!5m2!1sid!2sid"
+                    width="100%"
+                    height="250"
+                    style="border:0; border-radius: 15px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+
+          <div class="col-md-5 col-10" hidden>
             <div class="card text-center text-bg-light">
               <div class="card-header">Resepsi</div>
               <div class="card-body">
@@ -204,7 +207,7 @@
               </div>
               <div class="card-footer">
                 <a
-                  href="https://goo.gl/maps/ErnpyKxc9UJ1dRrL6"
+                  href="https://www.google.com/maps/search/?api=1&query=-7.781858875138048, 110.38906858306322"
                   target="_blank"
                   class="btn btn-light btn-sm my-3"
                   >Klik untuk membuka Peta</a
@@ -212,6 +215,20 @@
               </div>
             </div>
           </div>
+
+          <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <!-- <h2>Save the Date</h2> -->
+            <p class="quotes">
+              "Bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari diri yang satu (Adam), 
+              dan (Allah) menciptakan pasangannya (Hawa) dari (diri)-nya; dan dari keduanya Allah
+               memperkembangbiakkan laki-laki dan perempuan yang banyak"
+               <br>
+               <span>QS. An-Nisa 1:176</span>
+            </p>
+            
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -444,8 +461,8 @@
               </select>
             </div>
           </div>
-          <div class="col-12" style="margin-top: 36px">
-            <button class="btn btn-primary">Kirim</button>
+          <div class="col-12" style="margin-top: 30px">
+            <button class="btn btn-lg mt-4">Kirim</button>
           </div>
         </form>
       </div>
