@@ -5,6 +5,12 @@
   --darkBlue: #102C57;
   --softCream: #EADBC8;
   --cream: #F8F0E5;
+  --eucalyptusGreen: #60665A;
+  --eucalyptusSoft: #7D9094;
+  --eucalyptusSofty: #96ACA0;
+  --blushPink: #C69491;
+  --blushyPink: #F9C8C2;
+
   --shadow: 0 2px 2px rgba(0 0 0 / 0.5);
 }
 
@@ -23,7 +29,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(img/background/coupleRing.jpg);
+    url(img/Undangan/ANTY4371.JPG);
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -31,7 +37,8 @@ body {
 }
 
 .hero {
-  min-height: 600px; /* opsional: untuk jaga-jaga tampilan tetap oke */
+  min-height: 600px;
+  /* opsional: untuk jaga-jaga tampilan tetap oke */
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -42,6 +49,7 @@ body {
 .hero p {
   text-shadow: var(--shadow);
 }
+
 .hero h2 {
   font-family: "Georgia", serif;
   font-size: 3rem;
@@ -49,9 +57,11 @@ body {
 }
 
 .hero h1 {
-  font-family: "Georgia", serif;
+  top: 50%;
   font-size: 6rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-family: 'Rouge Script', cursive;
+
 }
 
 .hero h3 {
@@ -68,14 +78,91 @@ body {
 }
 
 .hero a {
-  color: var(--darkBlue);
-  background-color: white;
+  background-color: var(--eucalyptusSoft);
+  color: var(--cream);
   box-shadow: var(--shadow);
 }
 
 .hero a:hover {
-  background-color: var(--darkBlue);
-  color: white;
+ color: var(--eucalyptusSoft);
+  background-color: var(--cream);
+}
+
+.guest {
+  margin-top: 80px;
+  position: relative;
+}
+.opening::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/Undangan/ANTT3714.JPG);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.opening {
+  min-height: 600px;
+  /* opsional: untuk jaga-jaga tampilan tetap oke */
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.opening h1,
+.opening h4,
+.opening p {
+  text-shadow: var(--shadow);
+}
+
+.opening h2 {
+  font-family: "Georgia", serif;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.opening h1 {
+  font-family: "Georgia", serif;
+  font-size: 6rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.opening h3 {
+  font-family: "Playfair Display", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.opening h4 {
+  font-size: 1.6rem;
+  font-family: "Playfair Display", serif;
+}
+
+.opening p {
+  font-size: 1.6rem;
+  font-family: "Playfair Display", serif;
+}
+
+.opening a {
+  color: var(--eucalyptusGreen);
+  background-color: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.wedding-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--softCream);
+  text-align: center;
+  margin: 40px auto;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .floating-icon-navbar {
@@ -86,7 +173,8 @@ body {
   right: 20px;
   flex-direction: column;
   gap: 15px;
-  z-index: 1050; /* di atas konten lain */
+  z-index: 1050;
+  /* di atas konten lain */
 }
 
 .icon-btn {
@@ -95,7 +183,8 @@ body {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: var(--darkBlue); /* warna icon bootstrap default */
+  color: var(--eucalyptusGreen);
+  /* warna icon bootstrap default */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +194,7 @@ body {
 }
 
 .icon-btn:hover {
-  background-color: var(--darkBlue);
+  background-color: var(--eucalyptusGreen);
   color: white;
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
@@ -113,9 +202,12 @@ body {
 
 .note {
   margin-top: 16px;
-  font-size: 0.75rem; /* Ukuran diperkecil */
-  color: #000000; /* Warna lebih soft */
-  font-style: italic; /* Opsional: bikin kesan lembut */
+  font-size: 0.75rem;
+  /* Ukuran diperkecil */
+  color: #000000;
+  /* Warna lebih soft */
+  font-style: italic;
+  /* Opsional: bikin kesan lembut */
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -128,7 +220,7 @@ body {
   min-height: 100vh;
   padding-top: 5rem;
   padding-bottom: 8rem;
-  background-color: var(--darkBlue);
+  background-color: var(--eucalyptusGreen);
   opacity: 90%;
 }
 
@@ -136,7 +228,7 @@ body {
 .info h2,
 .story h2,
 .gifts h2 {
-  color: var(--softCream);
+  color: var(--cream);
   font-family: "Georgia", cursive;
   font-size: 4rem;
   font-weight: bold;
@@ -144,7 +236,7 @@ body {
 
 .gallery h2,
 .rsvp h2 {
- color: var(--darkBlue);
+  color: var(--eucalyptusGreen);
   font-family: "Georgia", cursive;
   font-size: 4rem;
   font-weight: bold;
@@ -156,8 +248,14 @@ body {
   margin-bottom: 1rem;
 }
 
+.home h4 {
+  color: var(--softCream);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .home p {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-family: Georgia, serif;
   color: var(--softCream);
 }
@@ -169,9 +267,26 @@ body {
 .home .couple h3 {
   font-family: "Georgia", cursive;
   font-size: 2.4rem;
-  color: var(--darkBlue);
+  color: var(--eucalyptusGreen);
 }
 
+.instagram,
+.address {
+  color: var(--eucalyptusGreen);
+  background-color: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.rsvpForm {
+  color: var(--cream);
+  background-color: var(--eucalyptusSofty);
+  box-shadow: var(--shadow);
+}
+
+.home a:hover {
+ color: var(--eucalyptusSoft);
+  background-color: var(--cream);
+}
 /* .home .couple img {
   width: 70%;
   border-radius: 70%;
@@ -187,7 +302,8 @@ body {
 .photo-inner {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; /* rasio kotak */
+  aspect-ratio: 1 / 1;
+  /* rasio kotak */
 }
 
 /* Foto & frame pakai posisi yang sama */
@@ -201,7 +317,7 @@ body {
 }
 
 .foto-pengantin {
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 50%;
   z-index: 1;
   box-shadow: 3px 3px 5px 0.5px #000;
@@ -235,13 +351,14 @@ body {
   font-family: 'Georgia', serif;
   font-size: 5rem;
   letter-spacing: 8px;
-  color: var(--bg); /* warna emas */
+  color: var(--bg);
+  /* warna emas */
   text-transform: uppercase;
 }
 
 .home .heart i {
   margin: auto;
-  color: var(--darkBlue);
+  color: var(--eucalyptusSoft);
 }
 
 .couple-img {
@@ -293,7 +410,7 @@ body {
 }
 
 .info {
-  background-color: var(--darkBlue);
+  background-color: var(--eucalyptusSofty);
   color: var(--cream);
   padding-top: 5rem;
   padding-bottom: 8rem;
@@ -343,7 +460,7 @@ body {
 .rsvp {
   padding-top: 5rem;
   padding-bottom: 8rem;
-  background-color: var(--softCream);
+  background-color: var(--cream);
   opacity: 90%;
 }
 
@@ -351,10 +468,10 @@ body {
 .gallery span,
 .gifts span {
   text-transform: uppercase;
-  color: #102C57;
   font-size: 0.9rem;
   letter-spacing: 1px;
   display: block;
+  color: var(--dustyPinkRose);
   margin-bottom: 1rem;
 }
 
@@ -367,13 +484,14 @@ body {
 }
 
 .closing {
- width: 100%;
+  width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(img/background/coupleRing.jpg);
+    url(img/Undangan/ANTT3814.JPG);
   background-size: cover;
   background-position: center;
-  min-height: 600px; /* opsional: untuk jaga-jaga tampilan tetap oke */
+  min-height: 600px;
+  /* opsional: untuk jaga-jaga tampilan tetap oke */
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -381,7 +499,7 @@ body {
 }
 
 .gifts button {
-  color: var(--darkBlue);
+  color: var(--eucalyptusSoft);
   background-color: white;
   size: 2em;
   box-shadow: var(--shadow);
@@ -484,13 +602,8 @@ body {
   right: auto;
 }
 
-/* .gallery {
-  background-color: var(--darkBlue);
-  opacity: 90%;
-} */
-
 .gifts {
-  background-color: var(--darkBlue);
+  background-color: var(--eucalyptusSofty);
   padding-top: 5rem;
   padding-bottom: 8rem;
 }
@@ -508,31 +621,31 @@ body {
 }
 
 .gifts button {
-  background-color: var(--darkBlue);
-  color: white;
-  border: 1px solid var(--darkBlue);
+  background-color: var(--eucalyptusSoft);
+  color: var(--cream);
+  border: 1px solid var(--eucalyptusSoft);
 }
 
 .gifts button:hover {
-  background-color: white;
-  color: var(--darkBlue);
-  border: 1px solid white;
+  background-color: var(--softCream);
+  color: var(--eucalyptusSoft);
+  border: 1px solid var(--cream);
 }
 
 footer {
-  padding: 3rem;
-  background-color: var(--darkBlue);
-  color: white;
+  padding: 2rem;
+  background-color: var(--eucalyptusSoft);
+  color: var(--cream);
 }
 
 footer a {
-  color: var(--darkBlue);
+  color: var(--eucalyptusSoft);
   font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: white;
+  color: var(--cream);
 }
 
 footer li {
@@ -577,6 +690,7 @@ footer li {
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -596,8 +710,10 @@ footer li {
     font-size: 75%;
   }
 
-  .simply-countdown > .simply-section {
-    padding: 70px;
+  .simply-countdown>.simply-section {
+    padding: 40px;
+    background-color: var(--softCream);
+    color: var(--eucalyptusSoft);
   }
 
   .home .heart {
@@ -640,9 +756,11 @@ footer li {
     font-size: 65%;
   }
 
-  .simply-countdown > .simply-section {
+  .simply-countdown>.simply-section {
     padding: 60px;
     margin: 5px;
+    background-color: var(--softCream);
+    color: var(--eucalyptusSoft);
   }
 
   .mynavbar .nav-link {
@@ -671,9 +789,11 @@ footer li {
     font-size: 60%;
   }
 
-  .simply-countdown > .simply-section {
-    padding: 40px;
+  .simply-countdown>.simply-section {
+    padding: 30px;
     margin: 3px;
+    background-color: var(--softCream);
+    color: var(--eucalyptusSoft);
   }
 
   .timeline li .timeline-image {
