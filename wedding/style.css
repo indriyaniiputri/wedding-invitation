@@ -177,32 +177,46 @@ body {
   border-radius: 70%;
   box-shadow: 3px 3px 5px 0.5px #000;
 } */
-
 .photo-wrapper {
   position: relative;
   width: 100%;
-  height: 450px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.photo-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* rasio kotak */
+}
+
+/* Foto & frame pakai posisi yang sama */
+.foto-pengantin,
+.flower-frame {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.foto-pengantin {
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 3px 3px 5px 0.5px #000;
 }
 
 .flower-frame {
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 90%;
-  z-index: 1;
-}
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
 
-.foto-pengantin {
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 60%;
-  height: 60%;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 3px 3px 5px 0.5px #000;
-  z-index: 1;
 }
 
 .home .heart {
