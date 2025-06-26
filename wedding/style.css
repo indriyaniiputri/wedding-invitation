@@ -1,15 +1,15 @@
 :root {
   --pink: #f14e95;
   --blueOcean: #00bcd4;
-  --bg: #DAC0A3;
-  --darkBlue: #102C57;
-  --softCream: #EADBC8;
-  --cream: #F8F0E5;
-  --eucalyptusGreen: #60665A;
-  --eucalyptusSoft: #7D9094;
-  --eucalyptusSofty: #96ACA0;
-  --blushPink: #C69491;
-  --blushyPink: #F9C8C2;
+  --bg: #dac0a3;
+  --darkBlue: #102c57;
+  --softCream: #eadbc8;
+  --cream: #f8f0e5;
+  --eucalyptusGreen: #60665a;
+  --eucalyptusSoft: #7d9094;
+  --eucalyptusSofty: #96aca0;
+  --blushPink: #c69491;
+  --blushyPink: #f9c8c2;
 
   --shadow: 0 2px 2px rgba(0 0 0 / 0.5);
 }
@@ -60,8 +60,7 @@ body {
   top: 50%;
   font-size: 6rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  font-family: 'Rouge Script', cursive;
-
+  font-family: "Rouge Script", cursive;
 }
 
 .hero h3 {
@@ -84,7 +83,7 @@ body {
 }
 
 .hero a:hover {
- color: var(--eucalyptusSoft);
+  color: var(--eucalyptusSoft);
   background-color: var(--cream);
 }
 
@@ -155,7 +154,7 @@ body {
 }
 
 .wedding-quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 20px;
   color: var(--softCream);
@@ -286,7 +285,7 @@ body {
 }
 
 .home a:hover {
- color: var(--eucalyptusSoft);
+  color: var(--eucalyptusSoft);
   background-color: var(--cream);
 }
 /* .home .couple img {
@@ -334,7 +333,6 @@ body {
   object-fit: contain;
   z-index: 2;
   pointer-events: none;
-
 }
 
 .home .heart {
@@ -350,7 +348,7 @@ body {
 }
 
 .home .elegant-heading {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 5rem;
   letter-spacing: 8px;
   color: var(--bg);
@@ -409,6 +407,13 @@ body {
 .couple p {
   font-size: 16px;
   color: var(--bg);
+}
+
+.simply-countdown > .simply-section {
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--softCream);
+  color: var(--eucalyptusSoft);
 }
 
 .info {
@@ -712,12 +717,6 @@ footer li {
     font-size: 75%;
   }
 
-  .simply-countdown>.simply-section {
-    padding: 40px;
-    background-color: var(--softCream);
-    color: var(--eucalyptusSoft);
-  }
-
   .home .heart {
     display: none;
   }
@@ -758,11 +757,11 @@ footer li {
     font-size: 65%;
   }
 
-  .simply-countdown>.simply-section {
-    padding: 60px;
+  .simply-countdown > .simply-section {
+    padding: 40px;
     margin: 5px;
-    background-color: var(--softCream);
-    color: var(--eucalyptusSoft);
+    /* background-color: var(--softCream);
+    color: var(--eucalyptusSoft); */
   }
 
   .mynavbar .nav-link {
@@ -791,11 +790,11 @@ footer li {
     font-size: 60%;
   }
 
-  .simply-countdown>.simply-section {
+  .simply-countdown > .simply-section {
     padding: 30px;
     margin: 3px;
-    background-color: var(--softCream);
-    color: var(--eucalyptusSoft);
+    /* background-color: var(--softCream);
+    color: var(--eucalyptusSoft); */
   }
 
   .timeline li .timeline-image {
@@ -814,5 +813,13 @@ footer li {
 
   .timeline li .timeline-panel::after {
     top: 31px;
+  }
+}
+
+@media (max-width: 400px) {
+  .simply-countdown > .simply-section {
+    min-width: 50px;
+    padding: 6px;
+    margin: 2px;
   }
 }
