@@ -28,12 +28,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(img/Undangan/ANTY4371.JPG);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), #f8f0e5),
+    url(img/Undangan/ANTY4371A.JPG);
   background-size: cover;
   background-position: center;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .hero {
@@ -122,10 +122,13 @@ body {
 }
 
 .opening h2 {
-   font-family: "Tangerine", cursive;
+  font-family: "Tangerine", cursive;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: normal;
+  padding-left: 15%;
+  padding-right: 15%;
+
 }
 
 .opening h1 {
@@ -166,6 +169,27 @@ body {
   line-height: 1.6;
 }
 
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 16px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.masonry-gallery a {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  transition: transform 0.3s ease;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .floating-icon-navbar {
   display: none;
   /* position: fixed; */
@@ -198,7 +222,6 @@ body {
   background-color: var(--eucalyptusGreen);
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
 }
 
 .note {
@@ -230,7 +253,9 @@ body {
   font-family: "Georgia", cursive;
   font-size: 4rem;
   font-weight: bold;
+  font-style: italic;
 }
+
 .home h1 {
   font-family: "Rouge Script", cursive;
   font-size: 12rem;
@@ -250,7 +275,7 @@ body {
   margin-bottom: 1rem;
   font-family: "Georgia", cursive;
   font-weight: bold;
-
+  font-style: italic;
 }
 
 .home h5 {
@@ -299,6 +324,7 @@ body {
   border-radius: 70%;
   box-shadow: 3px 3px 5px 0.5px #000;
 } */
+
 .photo-wrapper {
   position: relative;
   width: 100%;
@@ -418,8 +444,8 @@ body {
 .simply-countdown > .simply-section {
   padding: 10px;
   margin: 10px;
-  background-color: var(--softCream);
-  color: var(--eucalyptusSoft);
+  background-color: var(--cream);
+  color: var(--eucalyptusGreen);
 }
 
 .info {
@@ -427,6 +453,12 @@ body {
   color: var(--cream);
   padding-top: 5rem;
   padding-bottom: 8rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),var(--eucalyptusSofty)),
+    url(img/Undangan/ANTT3791.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .info .alamat {
@@ -495,11 +527,29 @@ body {
   font-size: 1rem;
   font-weight: 300;
 }
+.flower-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: -20px; /* negatif gap tidak berlaku, jadi pakai margin nanti */
+  margin-top: -30px;
+  position: relative;
+  z-index: 1;
+}
+
+.flower-item {
+  width: 22vw;
+  max-width: 120px;
+  margin-left: -15px;
+  margin-right: -15px;
+  transform: rotate(var(--rotate, 0deg)) scale(var(--scale, 1));
+  z-index: 1;
+}
 
 .closing {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), #60665a),
     url(img/Undangan/ANTT3814.JPG);
   background-size: cover;
   background-position: center;
@@ -509,6 +559,23 @@ body {
   overflow: hidden;
   min-height: 100vh;
   padding-bottom: 3rem;
+}
+.background-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 1;
+  transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2; /* pastikan teks di atas slider */
 }
 
 .gifts button {
@@ -645,6 +712,10 @@ body {
   border: 1px solid var(--cream);
 }
 
+.border-img {
+  border-radius: 15px;
+  border: var(--eucalyptusGreen);
+}
 footer {
   padding: 2rem;
   background-color: var(--eucalyptusSoft);
@@ -715,6 +786,9 @@ footer li {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
   }
+   .masonry-gallery {
+    column-count: 3;
+  }
 }
 
 /* Laptop */
@@ -723,6 +797,9 @@ footer li {
     font-size: 75%;
   }
 
+ .masonry-gallery {
+    column-count: 3;
+  }
   .home .heart {
     display: none;
   }
@@ -763,6 +840,10 @@ footer li {
     font-size: 65%;
   }
 
+   .masonry-gallery {
+    column-count: 3;
+  }
+
   .simply-countdown > .simply-section {
     padding: 40px;
     margin: 5px;
@@ -796,6 +877,21 @@ footer li {
     font-size: 60%;
   }
 
+   .masonry-gallery {
+    column-count: 3;
+  }
+   .top-overlay {
+  position: relative;
+  top: 10%; /* sesuaikan naik/turun */
+  text-align: center;
+  color: var(--cream);
+  }
+
+   .flower-item {
+    width: 25vw;
+    max-width: 100px;
+  }
+  s
   .simply-countdown > .simply-section {
     padding: 30px;
     margin: 3px;
@@ -827,5 +923,11 @@ footer li {
     min-width: 50px;
     padding: 6px;
     margin: 2px;
+  }
+   .top-overlay {
+  position: relative;
+  top: 10%; /* sesuaikan naik/turun */
+  text-align: center;
+  color: var(--cream);
   }
 }

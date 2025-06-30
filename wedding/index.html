@@ -33,36 +33,64 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
       <link rel="stylesheet" href="style.css" />
-      <link href="path/to/lightbox.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
       <!--AOS-->
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script src="path/to/lightbox.js"></script>
     </head>
+    <script>
+      const images = [
+        'img/Undangan/ANTY4371A.JPG',
+        'img/Undangan/ANTY4365.JPG',
+        'img/Undangan/ANTY4393.JPG'
+      ];
+
+      let index = 0;
+      const slider = document.querySelector('.background-slider');
+
+      function changeBackground() {
+        slider.style.backgroundImage = `url(${images[index]})`;
+        index = (index + 1) % images.length;
+      }
+
+      changeBackground(); // inisialisasi
+      setInterval(changeBackground, 4000); // ganti setiap 4 detik
+    </script>
 
     <body>
       <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
       <script>
-        AOS.init();
+      AOS.init({
+        duration: 1000,  // durasi animasi dalam ms
+        once: true       // animasi hanya sekali scroll
+      });      
       </script>
 
       <section
         id="hero"
         class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
-          <div class="overlay fade-in">
+          <div class="background-slider"></div>  
+          <!-- background slider -->
+
+          <div class="top-overlay fade-in">
             <h3 class="subtitle">The Wedding of</h3>
             <h1>Riko & Desi</h1>
             <h3>19 Juli 2025</h3>
-
-            <p class="guest">
-              Kepada Yth. Bapak/Ibu/Saudara/i,<br /><h2>Tamu Istimewa</h2>
-            </p>
-            <a href="#opening" class="btn btn-lg mt-4" onclick="enableScroll()">Buka Undangan</a>
           </div>
-          <p class="note" style="font-size: 0.75rem">
-            Mohon maaf apabila ada kesalahan penulisan nama / gelar
+
+        <div class="overlay fade-in">
+          <p class="guest">
+            Kepada Yth. Bapak/Ibu/Saudara/i,<br />
+            <h2>Tamu Istimewa</h2>
           </p>
+          <a href="#opening" class="btn btn-lg mt-4" onclick="enableScroll()">Buka Undangan</a>
+        </div>
+
+        <p class="note" style="font-size: 0.75rem">
+          Mohon maaf apabila ada kesalahan penulisan nama / gelar
+        </p>
         </main>
       </section>
 
@@ -71,15 +99,8 @@
         class="opening w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
           <div class="overlay fade-in">
-              <h4 class="quotes" hidden>
-                "Bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari diri yang satu (Adam), 
-                dan (Allah) menciptakan pasangannya (Hawa) dari (diri)-nya; dan dari keduanya Allah
-                memperkembangbiakkan laki-laki dan perempuan yang banyak"
-                <br>
-                <span>QS. An-Nisa 1:176</span>
-              </h4>
               <h2 class="wedding-quote"
-               data-aos="zoom-in"
+               data-aos="zoom-in-up"
                data-aos-delay="300">
                 "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang 
                 telah dipersatukan Allah, tidak boleh diceraikan manusia."
@@ -115,8 +136,8 @@
         <div class="col-md-8 col-10 text-center">
           <!-- <h2>Riko & Desi's Wedding</h2> -->
           <p>
-            Tanpa mengurangi rasa hormat, kami bermaksud mengundang
-            Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami:
+           Atas berkat dan kasih karunia dari Tuhan. Di dalam sukacita, Kami mengundang Bapak/Ibu/Saudara/i
+          kiranya berkenan meringankan langkah untuk menghadiri acara pernikahan kami : 
           </p>
         </div>
       </div>
@@ -202,7 +223,8 @@
                         <span class="alamat">
                           HKBP Ressort Nomensen
                           <br>
-                        Jl. D.I. Panjaitan Gg. Putri Balkis No. 10, Kota Tanjung Pinang, Kepulauan Riau
+                        Jl. D.I. Panjaitan Gg. Putri Balkis No. 10, 
+                        <br>Kota Tanjungpinang
                         </span></i
                       >
                     </div>
@@ -236,7 +258,8 @@
                         <span class="alamat">
                           Gedung serbaguna Nomensen
                           <br>
-                          Jl. D.I. Panjaitan Gg. Putri Balkis No. 10, Kota Tanjung Pinang, Kepulauan Riau
+                          Jl. D.I. Panjaitan Gg. Putri Balkis No. 10, <br>
+                          Kota Tanjungpinang
                         </span></i>
                     </div>
                   </div>
@@ -273,10 +296,9 @@
       </section>
 
       <section id="gallery" class="gallery">
-        <div class="container">
           <div class  ="row justify-content-center">
             <div class="col-md-8 col-10 text-center">
-              <h2>Our Precious moment</h2>
+              <h2>Our Precious Moment</h2>
               <blockquote>
                 "Creating memories is a priceless gift. Memories last a lifetime;
                 objects last only a short time" 
@@ -284,143 +306,72 @@
             </div>
           </div>
 
-          <div
-            class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-            <div class="col mt-3" data-aos="zoom-in">
-              <a
-                href="img/Undangan/ANTY4516.JPG"
-                data-toggle="lightbox"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTY4516.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="100">
-              <a
-                href="img/Undangan/ANTY4590.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTY4590.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="200">
-              <a
-                href="img/Undangan/ANTY4393.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTY4393.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="300">
-              <a
-                href="img/Undangan/ANTY4365.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTY4365.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="400">
-              <a
-                href="img/Undangan/ANTT3560.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTT3560.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="500">
-              <a
-                href="img/Undangan/ANTT3211.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTT3211.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="600">
-              <a
-                href="img/Undangan/ANTT3618.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTT3618.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-            <div class="col mt-3" data-aos="fade-up" data-aos-delay="700">
-              <a
-                href="img/Undangan/ANTT3785.JPG"
-                data-toggle="lightbox"
-                data-caption="This describes the image"
-                data-gallery="mygallery"
-              >
-                <img
-                  src="img/Undangan/ANTT3785.JPG"
-                  alt="Aldi"
-                  class="img-fluid w-100 rounded"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div class="masonry-gallery" 
+              style="padding-left: 10%; padding-right: 10%; border-radius: 15%; border-color: #96aca0;">
+             
+             <a href="img/Undangan/ANTY4590.JPG" class="glightbox" data-aos-duration="1500" data-aos="zoom-in-left" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4590.JPG" alt="" />
+            </a>  <!-- portrait -->
 
-    <section id="gifts" class="gifts py-5">
-    <div class="container">
+              <a href="img/Undangan/ANTY4535.JPG" class="glightbox" data-aos-duration="3000" data-aos="zoom-out-up" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4535.JPG" alt="" />
+              </a> <!-- landscape -->
+           
+             <a href="img/Undangan/ANTY4572.JPG" class="glightbox" data-aos-duration="1500" data-aos="zoom-out-up" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4572.JPG" alt="" />
+            </a> <!-- portrait -->
+
+            <a href="img/Undangan/ANTT3785.jpg" class="glightbox" data-aos-duration="3000" data-aos="zoom-in-left" data-gallery="mygallery">
+              <img src="img/Undangan/ANTT3785.JPG" alt="" />
+            </a> <!-- landscape -->
+
+             <a href="img/Undangan/ANTY4619.jpg" class="glightbox" data-aos-duration="1500" data-aos="zoom-out-up" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4619.JPG" alt="" />
+            </a><!-- portrait -->
+
+             <a href="img/Undangan/ANTT3625.jpg" class="glightbox" data-aos-duration="3000" data-aos="zoom-in-left" data-gallery="mygallery">
+              <img src="img/Undangan/ANTT3625.JPG" alt="" />
+            </a> <!-- landscape -->
+
+             <a href="img/Undangan/ANTT3211.jpg" class="glightbox" data-aos-duration="3000" data-aos="zoom-in-left" data-gallery="mygallery">
+              <img src="img/Undangan/ANTT3211.JPG" alt="" />
+            </a> <!-- landscape -->
+
+
+             <a href="img/Undangan/ANTY4365.jpg" class="glightbox" data-aos-duration="1500" data-aos="zoom-out-up" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4365.JPG" alt="" />
+            </a> <!-- portrait -->
+
+            <a href="img/Undangan/ANTY4603.jpg" class="glightbox" data-aos-duration="3000" data-aos="zoom-out-up" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4603.JPG" alt="" />
+            </a><!-- landscape -->
+
+            <a href="img/Undangan/ANTY4393.jpg" class="glightbox" data-aos-duration="1500" data-aos="zoom-in-left" data-gallery="mygallery">
+              <img src="img/Undangan/ANTY4393.JPG" alt="" />
+            </a> <!-- portrait -->
+           
+        </div>
+    </section>
+
+    <section id="gifts" class="gifts">
       <div class="row justify-content-center">
         <div class="col-md-8 col-10 text-center">
           <h2>Kirim Hadiah</h2>
           <p>
-            Terima kasih atas doa dan restu yang telah anda berikan.
+            Terima kasih atas doa dan restu yang telah Bapak/Ibu/Saudara/i berikan.
             Bagi yang berkenan mengirim tanda kasih, silakan kirim dengan informasi di bawah ini.
           </p>
         </div>
       </div>
 
       <div class="row justify-content-center text-center">
-        <div class="col-md-10">
-          <ul class="list-group">
+        <div class="col-md-10" >
+          <ul class="list-group" style="padding-left: 10%; padding-right: 10%; border-radius: 15px;">
 
             <!-- ITEM 1 -->
             <li class="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
               <!-- Kiri -->
-              <div class="text-center text-md-start">
+              <div class="text-center text-md-start" >
                 <img src="img/BCA.png" alt="BCA" style="width: 50px;" class="mb-2" />
                 <div><strong>Roiko Sunarwan Silalahi</strong></div>
                 <div><span id="rekening1">8890694641</span></div>
@@ -446,11 +397,9 @@
                 <button class="btn btn-outline-secondary btn-sm mt-1" onclick="salinRekening('alamat2')">Salin Alamat</button>
               </div>
             </li>
-
           </ul>
         </div>
       </div>
-    </div>
   </section>
 
 
@@ -467,6 +416,7 @@
         method="POST"
         action="https://script.google.com/macros/s/AKfycbygiy3BtoVMZ1-OzPLubYTIlVseGy2lTiJh7mQQuEmR_wzQB5ya6OdVQk_DjDAT5raW/exec"
         id="my-form"
+         style="padding-left: 10%; padding-right: 10%; border-radius: 15px;"
         class="row justify-content-center">
         <div class="col-md-6">
           <div class="mb-3">
@@ -525,10 +475,16 @@
         id="closing"
         class="closing w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
+           <div class="background-slider"></div>  
+          <!-- background slider -->
+
           <div class="overlay fade-in">
-            <h1 class="subtitle">Terima kasih</h3>
-            <h3 class="bride-groom">atas ucapan & doa untuk Kami</h1>
-          
+            <h1>Terima Kasih</h1>
+            <h2>Sungguh sebuah kehormatan dan kebahagiaan
+              jika Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu bagi kami
+            </h2>
+          <h1>Kami yang berbahagia,</h1>
+            <h1>Riko & Desi</h1>
           </div>
           </main>
       </section>
@@ -546,7 +502,7 @@
         </div>
       </footer>
 
-      <div id="audio-container">
+      <!-- <div id="audio-container">
         <audio id="lagu" autoplay loop>
           <source src="audio/will-u.mp3" type="audio/mp3" />
         </audio>
@@ -554,7 +510,7 @@
         <div class="audio-icon-wrapper" style="display: none">
           <i class="bi bi-disc"></i>
         </div>
-      </div>
+      </div> -->
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -562,6 +518,16 @@
         crossorigin="anonymous"
       ></script>
       <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const lightbox = GLightbox({
+            selector: '[data-toggle="lightbox"]',
+            autoplayVideos: false, // hanya berlaku untuk video
+            slideShowInterval: 0 // ini mematikan slideshow otomatis
+          });
+        });
+    </script>
 
       <script>
         simplyCountdown(".simply-countdown", {
