@@ -235,6 +235,9 @@ body {
   transform: translateX(-50%);
 }
 
+.gallery blockquote {
+  font-family: "Georgia", serif;
+}
 .home {
   /* background-image: url(img/bunga.png); */
   background-size: cover;
@@ -309,6 +312,11 @@ body {
   box-shadow: var(--shadow);
 }
 
+.address:hover {
+  color: var(--eucalyptusGreen);
+  background-color: var(--softCream);
+}
+
 .rsvpForm {
   color: var(--cream);
   background-color: var(--eucalyptusSofty);
@@ -320,15 +328,47 @@ body {
    background-color: var(--eucalyptusSoft);
 }
 
+.ucapan-section {
+  background: #fdf9f4;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
 .ucapan-card {
-  background-color: #fff;
-  border: 1px solid var(--eucalyptusSofty);
-  border-left: 5px solid var(--eucalyptusSofty); /* warna aksen */
+  background: #fff;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.ucapan-card h2 {
+  font-size: 2rem;
+  color: #4d4d4d;
+  margin-bottom: 10px;
+}
+
+.ucapan-card p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.ucapan-input, .ucapan-textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
+  font-size: 1rem;
+  background-color: #fcfcfc;
+}
+
+.ucapan-textarea {
+  height: 100px;
+  resize: vertical;
 }
 
 .ucapan-card:hover {
@@ -364,11 +404,6 @@ body {
   color: var(--eucalyptusGreen);
   background-color: var(--softCream);
 }
-/* .home .couple img {
-  width: 70%;
-  border-radius: 70%;
-  box-shadow: 3px 3px 5px 0.5px #000;
-} */
 
 .photo-wrapper {
   position: relative;
@@ -561,7 +596,7 @@ body {
   font-size: 0.9rem;
   letter-spacing: 1px;
   display: block;
-  color: var(--dustyPinkRose);
+  color: var(--eucalyptusGreen);
   margin-bottom: 1rem;
 }
 
@@ -571,6 +606,8 @@ body {
 .gifts p {
   font-size: 1rem;
   font-weight: 300;
+  font-family: "Georgia", serif;
+
 }
 .flower-row {
   display: flex;
