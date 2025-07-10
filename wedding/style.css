@@ -851,6 +851,40 @@ footer li {
   animation: fadeInUp 3s ease-out forwards;
 }
 
+#pagination {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+#pagination button {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+#pageIndicator {
+  margin: 5px 0;
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;

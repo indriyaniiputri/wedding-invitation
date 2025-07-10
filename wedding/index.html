@@ -462,6 +462,13 @@
              class="bubble-ucapan"
              data-aos-duration="1500" data-aos="zoom-in-down"
              style="padding-top: 1%; padding-left: 10%; padding-right: 10%; border-radius: 15px;"></div>
+
+        <div id="pagination">
+            <button id="prevBtn" class="btn rsvpForm btn-lg px-4">Prev</button>
+            <span id="pageIndicator"></span>
+            <button id="nextBtn" class="btn rsvpForm btn-lg px-4">Next</button>
+        </div>
+
     </div>
 </section>
 
@@ -610,31 +617,36 @@
             });
     });
 
-    function tampilkanUcapan({nama, status, ucapan}) {
-        const div = document.createElement("div");
-        div.className = "ucapan-card"; // Gunakan class khusus
+    function tampilkanHalaman(page) {
+        daftarUcapan.innerHTML = "";
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const halamanUcapan = allUcapan.slice(start, end);
 
-        div.innerHTML = `
-    <div class="ucapan-header">
-      <h5>${nama} <span class="status">(${status})</span></h5>
-    </div>
-    <div class="ucapan-body">
-      <p>${ucapan}</p>
-    </div>`;
+        halamanUcapan.forEach(entry => tampilkanUcapan(entry));
+        updatePagination(page);
 
-        daftarUcapan.prepend(div);
+        // Auto-scroll ke bagian ucapan
+        daftarUcapan.scrollIntoView({ behavior: "smooth" });
     }
 
-
-    // Ambil semua ucapan saat halaman dibuka
     fetch(scriptURL)
         .then(response => response.json())
         .then(data => {
-            data.reverse().forEach(entry => {
-                tampilkanUcapan(entry);
-            });
-        })
-        .catch(error => console.error("Gagal ambil ucapan:", error));
+            allUcapan = data.reverse();
+            let currentPage = 1;
+
+            // Tampilkan pagination hanya jika data lebih dari 5
+            const paginationEl = document.getElementById("pagination");
+            if (allUcapan.length > 5) {
+                paginationEl.style.display = "flex";
+            } else {
+                paginationEl.style.display = "none";
+            }
+
+            tampilkanHalaman(currentPage);
+        });
+
 </script>
 
 
