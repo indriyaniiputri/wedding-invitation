@@ -88,6 +88,19 @@ body {
   background-color: var(--eucalyptusSoft);
 }
 
+/* Untuk efek fade-out */
+#hero.fade-out {
+  opacity: 0;
+  filter: blur(4px);
+  transition: opacity 1s ease, filter 1s ease;
+}
+
+/* Setelah terkunci, kita pasang ini supaya tak bisa diganggu */
+#hero.locked {
+  pointer-events: none;
+  user-select: none;
+}
+
 .guest {
   margin-top: 80px;
   position: relative;
@@ -128,7 +141,6 @@ body {
   font-style: normal;
   padding-left: 15%;
   padding-right: 15%;
-
 }
 
 .opening h1 {
@@ -324,14 +336,14 @@ body {
 }
 
 .rsvpForm:hover {
-   color: var(--cream);
-   background-color: var(--eucalyptusSoft);
+  color: var(--cream);
+  background-color: var(--eucalyptusSoft);
 }
 
 .ucapan-section {
   background: #fdf9f4;
   padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   text-align: center;
 }
 
@@ -356,7 +368,8 @@ body {
   margin-bottom: 20px;
 }
 
-.ucapan-input, .ucapan-textarea {
+.ucapan-input,
+.ucapan-textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -390,7 +403,7 @@ body {
 
 .ucapan-body p {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   color: #555;
   white-space: pre-line;
@@ -533,7 +546,7 @@ body {
   color: var(--cream);
   padding-top: 5rem;
   padding-bottom: 8rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),var(--eucalyptusSofty)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--eucalyptusSofty)),
     url(img/Undangan/ANTT3791.jpg);
   background-size: cover;
   background-position: center;
@@ -607,7 +620,6 @@ body {
   font-size: 1rem;
   font-weight: 300;
   font-family: "Georgia", serif;
-
 }
 .flower-row {
   display: flex;
@@ -643,12 +655,13 @@ body {
   padding-bottom: 3rem;
 }
 
-.closing h1, h2 {
+.closing h1,
+h2 {
   font-family: "Rouge Script", cursive;
   font-size: 4rem;
 }
 .closing h3 {
-   font-family: "Georgia", serif;
+  font-family: "Georgia", serif;
   font-size: 1.5rem;
   margin-top: 1rem;
 }
@@ -908,7 +921,7 @@ footer li {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
   }
-   .masonry-gallery {
+  .masonry-gallery {
     column-count: 3;
   }
 }
@@ -919,7 +932,7 @@ footer li {
     font-size: 75%;
   }
 
- .masonry-gallery {
+  .masonry-gallery {
     column-count: 3;
   }
   .home .heart {
@@ -962,7 +975,7 @@ footer li {
     font-size: 65%;
   }
 
-   .masonry-gallery {
+  .masonry-gallery {
     column-count: 3;
   }
 
@@ -999,21 +1012,20 @@ footer li {
     font-size: 60%;
   }
 
-   .masonry-gallery {
+  .masonry-gallery {
     column-count: 3;
   }
-   .top-overlay {
-   position: relative;
+  .top-overlay {
+    position: relative;
     top: 10%; /* sesuaikan naik/turun */
     text-align: center;
   }
 
-   .flower-item {
+  .flower-item {
     width: 25vw;
     max-width: 100px;
   }
-  s
-  .simply-countdown > .simply-section {
+  s .simply-countdown > .simply-section {
     padding: 30px;
     margin: 3px;
     /* background-color: var(--softCream);
@@ -1045,10 +1057,10 @@ footer li {
     padding: 6px;
     margin: 2px;
   }
-   .top-overlay {
-  position: relative;
-  top: 10%; /* sesuaikan naik/turun */
-  text-align: center;
-  color: var(--cream);
+  .top-overlay {
+    position: relative;
+    top: 10%; /* sesuaikan naik/turun */
+    text-align: center;
+    color: var(--cream);
   }
 }

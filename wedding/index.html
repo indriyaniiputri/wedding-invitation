@@ -769,17 +769,6 @@
         window.onscroll = null;
         rootElement.style.scrollBehavior = "smooth";
 
-        // Scroll ke section #opening
-        const openingSection = document.querySelector("#opening");
-        if (openingSection) {
-          openingSection.scrollIntoView({ behavior: "smooth" });
-        }
-
-        // Setelah delay, lock kembali ke hero
-        setTimeout(() => {
-          heroLocked = true;
-        }, 1000);
-
         // Tampilkan navbar
         const navbar = document.querySelector(".floating-icon-navbar");
         if (navbar) {
@@ -788,6 +777,24 @@
 
         // Play audio
         playAudio();
+
+        // Scroll ke section #opening
+        const openingSection = document.querySelector("#opening");
+        if (openingSection) {
+          openingSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Tambahkan efek fade-out dan lock ke hero
+        const heroSection = document.querySelector("#hero");
+        if (heroSection) {
+          heroSection.classList.add("fade-out");
+
+          // Setelah delay, lock kembali ke hero
+          setTimeout(() => {
+            heroSection.classList.add("locked");
+            heroLocked = true;
+          }, 1000);
+        }
       }
 
       // Cegah scroll balik ke atas (ke hero)
