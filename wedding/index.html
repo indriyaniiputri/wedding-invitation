@@ -753,43 +753,44 @@
 
       // Matikan scroll awal
       function disableScroll() {
-        scrollTop = window.pageYOffset || rootElement.scrollTop;
-        scrollLeft = window.pageXOffset || rootElement.scrollLeft;
+        document.documentElement.classList.add("lock-scroll");
+        document.body.classList.add("lock-scroll");
+        // scrollTop = window.pageYOffset || rootElement.scrollTop;
+        // scrollLeft = window.pageXOffset || rootElement.scrollLeft;
 
-        window.onscroll = function () {
-          window.scrollTo(scrollTop, scrollLeft);
-        };
+        // window.onscroll = function () {
+        //   window.scrollTo(scrollTop, scrollLeft);
+        // };
 
-        rootElement.style.scrollBehavior = "auto";
+        // rootElement.style.scrollBehavior = "auto";
       }
 
       // Aktifkan scroll dan blok akses balik ke #hero
       function enableScroll() {
-        // Hapus blok scroll
-        window.onscroll = null;
+        document.documentElement.classList.remove("lock-scroll");
+        document.body.classList.remove("lock-scroll");
+
         rootElement.style.scrollBehavior = "smooth";
 
-        // Tampilkan navbar
+        // Simpan ke localStorage bahwa undangan sudah dibuka
+        localStorage.setItem("undanganDibuka", "true");
+
+        playAudio();
+
         const navbar = document.querySelector(".floating-icon-navbar");
         if (navbar) {
           navbar.style.display = "flex";
         }
 
-        // Play audio
-        playAudio();
-
-        // Scroll ke section #opening
         const openingSection = document.querySelector("#opening");
         if (openingSection) {
           openingSection.scrollIntoView({ behavior: "smooth" });
         }
 
-        // Tambahkan efek fade-out dan lock ke hero
         const heroSection = document.querySelector("#hero");
         if (heroSection) {
           heroSection.classList.add("fade-out");
 
-          // Setelah delay, lock kembali ke hero
           setTimeout(() => {
             heroSection.classList.add("locked");
             heroLocked = true;
@@ -797,11 +798,16 @@
         }
       }
 
+      function resetUndangan() {
+        localStorage.removeItem("undanganDibuka");
+        location.reload();
+      }
+
       // Cegah scroll balik ke atas (ke hero)
       window.addEventListener("scroll", () => {
         if (!heroLocked) return;
 
-        const heroHeight = heroSection.offsetHeight;
+        const heroHeight = heroSection?.offsetHeight || 500;
         if (window.scrollY < heroHeight - 50) {
           const openingSection = document.querySelector("#opening");
           if (openingSection) {
@@ -823,10 +829,28 @@
 
       // Tombol play/pause audio
       function playAudio() {
+        if (!song) return;
+
         song.volume = 0.2;
         audioIconWrapper.style.display = "flex";
-        song.play();
+
+        // Set ikon default ke "pause" karena kita akan coba play
+        audioIcon.classList.remove("bi-disc");
+        audioIcon.classList.add("bi-pause-circle");
         isPlaying = true;
+
+        song
+          .play()
+          .then(() => {
+            // Autoplay berhasil → ubah ikon ke disc (berputar)
+            audioIcon.classList.add("bi-disc");
+            audioIcon.classList.remove("bi-pause-circle");
+          })
+          .catch((err) => {
+            // Autoplay ditolak → tetap tampil ikon "pause", tunggu klik
+            console.warn("Autoplay gagal, menunggu klik user...");
+            waitForUserInteraction();
+          });
       }
 
       audioIconWrapper.onclick = function () {
@@ -843,8 +867,43 @@
         isPlaying = !isPlaying;
       };
 
+      function waitForUserInteraction() {
+        const handler = () => {
+          song.play();
+          audioIcon.classList.add("bi-disc");
+          audioIcon.classList.remove("bi-pause-circle");
+          isPlaying = true;
+          document.removeEventListener("click", handler);
+        };
+
+        document.addEventListener("click", handler);
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const sudahBuka = localStorage.getItem("undanganDibuka") === "true";
+
+        if (!sudahBuka) {
+          disableScroll();
+        } else {
+          // Sudah pernah buka, langsung kunci hero
+          const navbar = document.querySelector(".floating-icon-navbar");
+          if (navbar) {
+            navbar.style.display = "flex";
+          }
+
+          if (heroSection) {
+            heroSection.classList.add("fade-out", "locked");
+          }
+
+          heroLocked = true;
+
+          // Coba play audio lagi saat reload
+          playAudio();
+        }
+      });
+
       // Jalankan disable scroll saat awal load
-      disableScroll();
+      // disableScroll();
     </script>
 
     <script>
