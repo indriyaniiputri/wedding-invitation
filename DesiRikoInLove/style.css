@@ -19,6 +19,8 @@ body {
   font-family: "Work Sans", sans-serif;
   height: 100%;
   min-height: 4000px;
+  overflow-x: hidden;
+
 }
 
 .hero::before {
